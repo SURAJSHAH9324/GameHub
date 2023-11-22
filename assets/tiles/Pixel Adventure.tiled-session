@@ -3,20 +3,100 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level-01.tmx",
+    "activeFile": "Level-04.tmx",
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "C:/Users/suraj/Downloads/pixel_adventure-master/pixel_adventure-master/assets/tiles/Level-01.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 1.64171875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 335.9284286666032,
+                "y": 183.03987817645384
+            }
+        },
+        "C:/Users/suraj/Downloads/pixel_adventure-master/pixel_adventure-master/assets/tiles/Level-02.tmx": {
+            "scale": 1.64171875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 319.48224992861907,
+                "y": 183.64899590749027
+            }
+        },
+        "C:/Users/suraj/Downloads/pixel_adventure-master/pixel_adventure-master/assets/tiles/Pixel Adventure.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/suraj/OneDrive/Desktop/tiles1O/Level-01.tmx": {
+            "scale": 1.4146739130434782,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 320.5685747214753,
+                "y": 239.27775643488286
+            }
+        },
+        "C:/Users/suraj/OneDrive/Desktop/tiles1O/Pixel Adventure.tsx": {
+            "scaleInDock": 1
+        },
+        "Level-01 - Copy.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 1.705546875,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 320.1319224955339,
+                "y": 184.398332646237
+            }
+        },
         "Level-01.tmx": {
             "expandedObjectLayers": [
-                2
+                2,
+                3
             ],
             "scale": 1.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 313.66666666666663,
-                "y": 230.99999999999997
+                "x": 319.66666666666663,
+                "y": 183.66666666666663
+            }
+        },
+        "Level-02.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.64171875,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 411.1544684496051,
+                "y": 183.64899590749027
+            }
+        },
+        "Level-03.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.71296875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 319.6205418224938,
+                "y": 184.1831615433732
+            }
+        },
+        "Level-04.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 292.66666666666663,
+                "y": 150.33333333333337
             }
         },
         "Pixel Adventure.tsx": {
@@ -31,13 +111,21 @@
     "map.tileWidth": 16,
     "map.width": 40,
     "openFiles": [
-        "Pixel Adventure.tsx",
-        "Level-01.tmx"
+        "Level-01.tmx",
+        "Level-04.tmx"
     ],
     "project": "Pixel Adventure.tiled-project",
+    "property.type": "float",
     "recentFiles": [
+        "Level-01.tmx",
+        "Level-04.tmx",
+        "Level-03.tmx",
+        "Level-01 - Copy.tmx",
+        "C:/Users/suraj/Downloads/pixel_adventure-master/pixel_adventure-master/assets/tiles/Level-01.tmx",
         "Pixel Adventure.tsx",
-        "Level-01.tmx"
+        "Level-02.tmx",
+        "C:/Users/suraj/OneDrive/Desktop/tiles1O/Level-01.tmx",
+        "C:/Users/suraj/Downloads/pixel_adventure-master/pixel_adventure-master/assets/tiles/Level-02.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
