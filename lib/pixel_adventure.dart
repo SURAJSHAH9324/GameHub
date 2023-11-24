@@ -8,6 +8,7 @@ import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flutter/painting.dart';
+
 import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
 
@@ -18,25 +19,18 @@ class PixelAdventure extends FlameGame
   late CameraComponent cam;
   Player player = Player(character: 'Mask Dude');
   late JoystickComponent joystick;
-  bool showJoyStick = false;
+  bool showControls = false;
+  bool playSounds = true;
+  double soundVolume = 1.0;
+  List<String> levelNames = ['Level-04', 'Level-05'];
+  int currentLevelIndex = 0;
   @override
   FutureOr<void> onLoad() async {
     await images.loadAllImages();
-    @override
-    final world = Level(
-      player: player,
-      levelName: 'Level-04',
-    );
-    cam = CameraComponent.withFixedResolution(
-      world: world,
-      width: 640,
-      height: 360,
-    );
-    cam.viewfinder.anchor = Anchor.topLeft;
-
-    addAll([cam, world]);
-    if (showJoyStick) {
+    _loadLevel();
+    if (showControls) {
       addJoyStick();
+  
     }
 
     return super.onLoad();
@@ -44,29 +38,32 @@ class PixelAdventure extends FlameGame
 
   @override
   void update(double dt) {
-    if (showJoyStick) {
+    if (showControls) {
       updateJoyStick();
     }
     super.update(dt);
   }
 
   void addJoyStick() {
-    joystick = JoystickComponent(
-      knob: SpriteComponent(
-        sprite: Sprite(
-          images.fromCache('HUD/Knob.png'),
-        ),
+  priority = 10;
+  joystick = JoystickComponent(
+    background: SpriteComponent(
+      sprite: Sprite(
+        images.fromCache('HUD/Joystick.png'),
       ),
-      background: SpriteComponent(
-        sprite: Sprite(
-          images.fromCache('HUD/Joystick.png'),
-        ),
+    ),
+    knob: SpriteComponent(
+      sprite: Sprite(
+        images.fromCache('HUD/Knob.png'),
       ),
-      margin: const EdgeInsets.only(right: 0, bottom: 32),
-    );
+    ),
+    margin: const EdgeInsets.only(left: 32, bottom: 32),
+    
+  );
 
-    add(joystick);
-  }
+  add(joystick);
+}
+
 
   void updateJoyStick() {
     switch (joystick.direction) {
@@ -84,5 +81,35 @@ class PixelAdventure extends FlameGame
       default:
         player.horizontalMovement = 0;
     }
+  }
+
+  void loadNextLevel() {
+    removeWhere((component) => component is Level);
+
+    if (currentLevelIndex < levelNames.length - 1) {
+      currentLevelIndex++;
+      _loadLevel();
+    } else {
+      currentLevelIndex = 0;
+      _loadLevel();
+    }
+  }
+
+  void _loadLevel() {
+    Future.delayed(const Duration(seconds: 1), () {
+      Level world = Level(
+        player: player,
+        levelName: levelNames[currentLevelIndex],
+      );
+
+      cam = CameraComponent.withFixedResolution(
+        world: world,
+        width: 640,
+        height: 360,
+      );
+      cam.viewfinder.anchor = Anchor.topLeft;
+
+      addAll([cam, world]);
+    });
   }
 }
